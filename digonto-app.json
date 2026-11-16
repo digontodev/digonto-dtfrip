@@ -1,0 +1,44 @@
+{
+  "slug": "digonto-dtfrip",
+  "name": "Digonto DTFRIP",
+  "version": "1.8.8",
+  "comment": "Print and maintain an Epson L800 DTF printer (colour + white in one run)",
+  "entry": "digonto_dtfrip.py",
+  "files": [
+    "digonto_dtfrip.py",
+    "digonto_ui.py",
+    "dtfrip",
+    "profiles",
+    "assets",
+    "requirements.txt",
+    "README.txt"
+  ],
+  "requirements": "requirements.txt",
+  "check": "import numpy, fitz, PIL, PySide6.QtWidgets; import dtfrip.core as c, dtfrip.gui; c.lib()",
+  "needs_tk": false,
+  "linux_groups": [
+    "lp"
+  ],
+  "apt_optional": [
+    "escputil"
+  ],
+  "service": {
+    "args": [
+      "--keepalive"
+    ],
+    "name": "Digonto DTFRIP keep-alive"
+  },
+  "categories": "Graphics;Printing;",
+  "keywords": "dtf;rip;printer;epson;l800;white;ink;",
+  "wm_class": "digonto-dtfrip",
+  "legacy": {
+    "linux": [
+      "~/.local/share/applications/dtfrip.desktop"
+    ],
+    "darwin": [],
+    "windows": []
+  },
+  "apt": [
+    "libxcb-cursor0"
+  ]
+}
